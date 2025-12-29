@@ -100,7 +100,8 @@ IMPORTANT RULES:
 
 // 2. UPDATED Model Config
 const model = genAI.getGenerativeModel({ 
-  model: "gemini-2.5-flash", 
+//   model: "gemini-2.5-flash", 
+  model: "gemini-1.5-flash", 
   systemInstruction: SYSTEM_INSTRUCTION 
 });
 
@@ -125,7 +126,7 @@ export const generateResponse = async (sessionId: string, userMessage: string) =
       // 3. UPDATED Generation Config: Allow more text and more "creativity"
       generationConfig: {
         maxOutputTokens: 800, // Increased from 200 to 1024 (allows longer texts)
-        temperature: 0.7,       // Increased (0.9) for more personality and randomness
+        temperature: 0.9,       // Increased (0.9) for more personality and randomness
         topP: 0.9,
         topK: 40,
       },
